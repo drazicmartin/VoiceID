@@ -9,3 +9,6 @@ VoiceID is a deep learning-based speaker identification system that recognizes p
 
 - ### Speaker Verification (1:1):
   - Check if a claimed identity matches the voice sample (for authentication use cases).
+
+# Acknowledge
+This repo is based on the excellent [SpeachBrain](https://github.com/speechbrain/speechbrain/tree/develop) repository
