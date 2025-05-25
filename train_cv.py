@@ -40,8 +40,8 @@ if __name__ == "__main__":
 
     # Load the dataset
     debug = run_opts["debug"]
-    train_data, label_encoder = get_single_dataset(hparams, lang="hi", split="train", debug=debug)
-    valid_data, _             = get_single_dataset(hparams, lang="hi", split="validation", debug=debug)
+    train_data, label_encoder = get_single_dataset(hparams, lang="fr", split="train", debug=debug)
+    valid_data, _             = get_single_dataset(hparams, lang="fr", split="validation", debug=debug)
 
     # Create experiment directory
     sb.core.create_experiment_directory(
