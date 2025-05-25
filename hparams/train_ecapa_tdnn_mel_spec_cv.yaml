@@ -11,7 +11,7 @@ save_folder: !ref <output_folder>/save
 train_log: !ref <output_folder>/train_log.txt
 
 # VoxCeleb Data files
-data_folder: I:\Dataset\voxceleb_data
+data_folder: /workspace/Dataset
 
 noise_annotation: !ref <save_folder>/noise.csv
 rir_annotation: !ref <save_folder>/rir.csv
