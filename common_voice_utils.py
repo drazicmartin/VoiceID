@@ -41,7 +41,8 @@ def get_single_dataset(hparams, lang="fr", split="train", debug=False):
 
     label_encoder = sb.dataio.encoder.CategoricalEncoder()
 
-    cv_17 = load_dataset("mozilla-foundation/common_voice_17_0", lang, split=split, cache_dir="J:/.hf_cache")
+    # cache_dir="J:/.hf_cache"
+    cv_17 = load_dataset("mozilla-foundation/common_voice_17_0", lang, split=split)
     if debug:
         cv_17 = cv_17.take(20)
     cv_17 = cv_17.cast_column("audio", Audio(sampling_rate=hparams["sample_rate"]))
