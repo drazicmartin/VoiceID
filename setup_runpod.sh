@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# git clone https://github.com/drazicmartin/VoiceID.git /workspace/VoiceID
+
 # Install the required packages
 pip install speechbrain
 pip install datasets
