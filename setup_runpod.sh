@@ -4,6 +4,7 @@
 pip install speechbrain
 pip install datasets
 pip install tensorboard
+pip install soundfile
 
 apt update && apt install -y ffmpeg
 
