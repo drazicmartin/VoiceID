@@ -7,6 +7,7 @@ pip install speechbrain
 pip install datasets
 pip install tensorboard
 pip install soundfile
+pip install librosa
 
 apt update && apt install -y ffmpeg
 
