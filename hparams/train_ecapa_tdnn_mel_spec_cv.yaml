@@ -37,7 +37,7 @@ ckpt_interval_minutes: 15 # save checkpoint every N min
 
 # Training parameters
 number_of_epochs: 10
-batch_size: 64
+batch_size: 512
 lr: 0.001
 base_lr: 0.00000001
 max_lr: !ref <lr>
@@ -61,9 +61,9 @@ mel_scale: "slaney"
 dynamic_range_compression: True
 
 # Number of speakers
-out_n_neurons: 24728 # 1211 for vox1, 5994 for vox2, 7205 for vox1+vox2, 20046 for cv_fr || 1211+5994+20046 = 27251
+out_n_neurons: 8104 # 8104 for common_voice fr # 1211 for vox1, 5994 for vox2, 7205 for vox1+vox2, 20046 for cv_fr || 1211+5994+20046 = 27251
 
-num_workers: 0
+num_workers: 6
 dataloader_options:
     batch_size: !ref <batch_size>
     shuffle: !ref <shuffle>

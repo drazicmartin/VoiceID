@@ -50,19 +50,18 @@ def get_single_dataset(hparams, lang="fr", split="train", debug=False):
     cv_17 = cv_17.rename_column("client_id", "spk_id")
 
     unique_spk_ids = cv_17.unique('spk_id')
+    
+    lab_enc_file = Path(hparams["save_folder"]) / f"{split}_label_encoder.txt"
+    label_encoder.load_or_create(
+        path=lab_enc_file,
+        from_iterables=[unique_spk_ids],
+    )
 
-    if split == "train":
-        lab_enc_file = Path(hparams["save_folder"]) / f"{split}_label_encoder.txt"
-        label_encoder.load_or_create(
-            path=lab_enc_file,
-            from_iterables=[unique_spk_ids],
-        )
+    label_encoder.ignore_len()
 
-        label_encoder.ignore_len()
+    print(f"Number of speakers in {split} set: {len(unique_spk_ids)}")
 
-        print(f"Number of speakers in {split} set: {len(unique_spk_ids)}")
-
-        cv_17 = cv_17.map(lambda sample: {"spk_id_encoded": label_encoder.encode_sequence_torch([sample['spk_id']])})
+    cv_17 = cv_17.map(lambda sample: {"spk_id_encoded": label_encoder.encode_sequence_torch([sample['spk_id']])})
 
     cv_17.set_transform(
         partial(
