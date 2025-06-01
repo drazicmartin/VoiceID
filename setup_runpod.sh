@@ -9,9 +9,9 @@ pip install tensorboard
 pip install soundfile
 pip install librosa
 
-apt update && apt install -y ffmpeg
+apt update
+apt install -y ffmpeg nano zip
 
 huggingface-cli login --token $HUGGINGFACE_HUB_TOKEN
 
-
-python train_cv.py hparams/train_ecapa_tdnn_mel_spec_cv.yaml --precision fp16 --grad_accumulation_factor 2 --debug
+python train_cv.py hparams/train_ecapa_tdnn_mel_spec_cv.yaml
