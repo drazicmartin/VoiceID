@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# git clone https://github.com/drazicmartin/VoiceID.git /workspace/VoiceID
+# git clone https://github.com/drazicmartin/VoiceID.git /workspace/VoiceID; cd /workspace/VoiceID; . setup_runpod.sh
 
 # Install the required packages
 pip install speechbrain
